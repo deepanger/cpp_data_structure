@@ -10,6 +10,14 @@ struct BTnode
     BTnode *rchild;
 };
 
+BTnode* tree_generator(int data, BTnode *lchild, BTnode *rchild)
+{
+    BTnode *node = new BTnode;
+    node->data = data;
+    node->lchild = lchild;
+    node->rchild = rchild;
+    return node;
+}
 void pre_order(BTnode *root)
 {
     if(root!=nullptr){
@@ -111,5 +119,8 @@ int main()
     BTnode* root = simple_tree();
     cout << leaf_count(root) << endl;
     system("pause");
+
+    
+
     return 0;
 }
