@@ -71,7 +71,27 @@ int max_array_v3(int *array, int l, int u)//分治法的较好解法
     }
     return max(lmax + rmax, max(max_array_v3(array, l, m), max_array_v3(array, m + 1, u)));
 }
-
+// int  my_max_sum(int* a, int l, int u)
+// {
+//     if(l==u)
+//         return a[l];
+//     int lmax, rmax;
+//     lmax = rmax = NI;
+//     int m = (l + u) / 2;
+//     int sum = 0;
+//     for (int i = m; i >= l;i--)
+//     {
+//         sum += a[i];
+//         lmax = max(lmax, sum);
+//     }
+//     sum = 0;
+//     for (int i = m + 1; i <= u;i++)
+//     {
+//         sum += a[i];
+//         rmax = max(rmax, sum);
+//     }
+//     return max(lmax + rmax, max(my_max_sum(a, l, m), my_max_sum(a, m + 1, u)));
+// }
 int max_array_v4(int *array, int length)//动态规划的思想
 //扫描至array[i]时，可能的最长子向量有两种情况：要么在前i-1个元素中，要么以i结尾
 {
