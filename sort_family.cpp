@@ -126,12 +126,12 @@ void quick_sort(int *a, int start, int end)
     }
 }
 
-
 //这是一个非递归版本的快拍，用stack实现
 // void quick_sort_iteration(int *a, int start, int end);
 // {
 
 // }
+
 
 //归并排序的二路归并
 void merge(int *a, int *t, int start, int mid, int end)//t为辅助数组，这个很特殊了,mid为分界点
