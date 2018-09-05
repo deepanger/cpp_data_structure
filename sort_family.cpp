@@ -3,6 +3,7 @@
 #include<stack>
 #include<vector>
 #include<algorithm>
+#include<iostream>
 using namespace std;
 
 
@@ -126,6 +127,25 @@ void quick_sort(int *a, int start, int end)
     }
 }
 
+int find_k_least(int *a, int start, int end, int k)//仿照快拍原理，找出第k小的数来
+{
+    int pivot_pos = -1;
+    pivot_pos = partition(a, start, end);
+    while(pivot_pos!=(k-1))
+    {
+        if(pivot_pos>k-1)
+        {
+            pivot_pos = partition(a, start, pivot_pos);
+        }
+        else
+        {
+            pivot_pos = partition(a, pivot_pos+1, end);
+        }
+
+    }
+    return a[pivot_pos];
+}
+
 //这是一个非递归版本的快拍，用stack实现
 // void quick_sort_iteration(int *a, int start, int end);
 // {
@@ -183,6 +203,7 @@ int main()
     int a[] = {9, 8, 7, 6, 5, 4, 3, 2, 1,0};
     int *t;
     t = (int*)malloc(sizeof(int) * 10);
+    cout << find_k_least(a, 0, 9, 3);
     merge_sort(a, t, 0, 9);
     quick_sort(a, 0, 9);
     bubble_sort(a, 0, 9);
