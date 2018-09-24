@@ -5,7 +5,7 @@
 using namespace std;
 #define MAX 100
 int table[256];
-// memset(table, -1, sizeof(int) * 256);
+// memset(table, -1, sizeof(int) * 256);//这个填充-1是不对的，因为以字节为单位
 void dp(int *d, int n, char *a)
 {
     for (int i = 0; i < 256;i++)
